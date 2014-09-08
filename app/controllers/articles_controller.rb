@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    puts "99999999999999999999999999999"
     @article = Article.find(params[:id])
 
     if @article.update(article_params)
