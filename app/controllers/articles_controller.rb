@@ -3,12 +3,19 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def destroy
+    get_article_by_id
+    @article.destroy
+
+    redirect_to articles_path
+  end
+
   def edit
-    @article = Article.find(params[:id])
+    get_article_by_id
   end
 
   def update
-    @article = Article.find(params[:id])
+    get_article_by_id
 
     if @article.update(article_params)
       redirect_to @article
@@ -32,10 +39,14 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    get_article_by_id
   end
 
   private
+  def get_article_by_id
+    @article = Article.find(params[:id])
+  end
+
   def article_params
     params.require(:article).permit(:title, :text)
   end
