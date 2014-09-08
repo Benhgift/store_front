@@ -7,10 +7,10 @@ class CommentsController < ApplicationController
 
   private
   def get_article_by_id
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:article_id])
   end
 
-  def article_params
+  def comment_params
     params.require(:comment).permit(:commenter, :body)
   end
 end
