@@ -1,0 +1,17 @@
+<p>
+  <strong>Title:</strong>
+  <%= @category.title %>
+</p>
+<p>
+  <strong>Text:</strong>
+  <%= @category.text %>
+</p>
+
+<h2>Comments:</h2>
+<%= render @category.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
+<%= link_to 'Back', categories_path %>
+<%= link_to 'Edit', edit_category_path %>
