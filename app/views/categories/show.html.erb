@@ -7,11 +7,11 @@
   <%= @category.text %>
 </p>
 
-<h2>Comments:</h2>
-<%= render @category.comments %>
+<h2>Products:</h2>
+<%= render @category.products %>
 
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
+<h2>Add a product:</h2>
+<%= render "products/form" %>
 
 <%= link_to 'Back', categories_path %>
 <%= link_to 'Edit', edit_category_path %>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
   resources :categories do
-    resources :comments
+    resources :products
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

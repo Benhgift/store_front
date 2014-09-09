@@ -1,0 +1,12 @@
+<p>
+  <strong>Developed by:</strong>
+  <%= product.developer %>
+</p>
+<p>
+  <strong>Comment:</strong>
+  <%= product.body %>
+</p>
+
+<p>
+  <%= link_to 'Destroy', [product.category, product], method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>

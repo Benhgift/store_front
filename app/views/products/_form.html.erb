@@ -1,0 +1,13 @@
+<%= form_for([@category, @category.products.build]) do |f| %>
+  <p>
+    <%= f.label :developer %><br>
+    <%= f.text_field :developer %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </P>
+<% end %>
