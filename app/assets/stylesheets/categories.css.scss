@@ -1,0 +1,28 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.padder {
+  margin: .5em;
+  padding: .5em; 
+}
+
+#header {
+  font-size: 1.5em;
+  border: 2px solid black;
+  background: #ccc;
+}
+
+.border th {
+  border: 1px solid black;
+  margin: .3em;
+  padding: .1em; 
+  background: #f2f7f5;
+}
+
+.border td {
+  border: 1px solid black;
+  margin: .3em;
+  padding: .1em; 
+  background: #f2f7f5;
+}
