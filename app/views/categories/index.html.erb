@@ -4,23 +4,33 @@
       <h1>Listing Categories</h1>
     </div>
 
-    <%= link_to 'New category', new_category_path %>
-    <table class="border">
-        <th>Title</th>
-        <th>Text</th>
-      </tr>
+    <p>
+      <%= link_to 'New category', new_category_path %>
+    </p>
 
-      <% @categories.each do |category| %>
+    <table class="table">
+      <thread>
         <tr>
-          <td><%= category.title %></td>
-          <td><%= category.text %></td>
-          <td><%= link_to 'Show', category_path(category) %></td>
-          <td><%= link_to 'Edit', edit_category_path(category) %></td>
-          <td><%= link_to 'Destroy', category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th>Category</th>
+          <th>Description</th>
         </tr>
-    <% end %>
+      </thread>
+
+      <tbody>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.title %></td>
+            <td><%= category.text %></td>
+            <td><%= link_to 'Show', category_path(category) %></td>
+            <td><%= link_to 'Edit', edit_category_path(category) %></td>
+            <td><%= link_to 'Destroy', category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
 
-    <%= link_to 'Back', controller: 'welcome' %>
+    <p>
+      <%= link_to 'Back', controller: 'welcome' %>
+    </p>
   </div>
 </body>
