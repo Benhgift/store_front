@@ -1,17 +1,43 @@
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
-<p>
-  <strong>Text:</strong>
-  <%= @category.text %>
-</p>
+<body role="document">
+  <div class="container" role="main">
+    <div class="page-header">
+      <h2>Products:</h2>
+      <p>
+        <%= @category.title %>
+      </p>
+    </div>
 
-<h2>Products:</h2>
-<%= render @category.products %>
+    <table class="table">
+      <thread>
+        <tr>
+          <th>Product</th>
+          <th>Created by:</th>
+        </tr>
+      </thread>
 
-<h2>Add a product:</h2>
-<%= render "products/form" %>
+      <tbody>
+        <% @category.products.each do |product| %>
+          <tr>
+            <td><%= product.body %></td>
+            <td><%= product.developer %></td>
+            <td><%= link_to 'Show', category_product_path(@category, product) %>
+            <td><%# link_to 'Edit', edit_product_path(category) %></td>
+            <td><%# link_to 'Destroy', product_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'Back', categories_path %>
-<%= link_to 'Edit', edit_category_path %>
+    <div class="page-header">
+      <h2>Add a product:</h2>
+      <p>
+        <%= render "products/form" %>
+      </p>
+    </div>
+
+    <p>
+      <%= link_to 'Back', categories_path %> | 
+      <%= link_to 'Edit', edit_category_path %>
+    </p>
+  </div>
+</body>

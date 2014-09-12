@@ -9,12 +9,21 @@ class ProductsController < ApplicationController
 
   def destroy 
     get_category_by_id
-    @product = @category.products.find(params[:id])
+    find_product
     @product.destroy
     redirect_to category_path(@category)
   end
 
+  def show
+    get_category_by_id
+    find_product
+  end
+
   private
+  def find_product
+    @product = @category.products.find(params[:id])
+  end
+
   def make_product_from_params
     @product = @category.products.create(product_params)
   end

@@ -1,12 +1,21 @@
-<p>
-  <strong>Developed by:</strong>
-  <%= product.developer %>
-</p>
-<p>
-  <strong>Comment:</strong>
-  <%= product.body %>
-</p>
+<body role="document">
+  <div class="container" role="main">
+    <div class="page-header">
+      <h2>Product:</h2>
+    </div>
 
-<p>
-  <%= link_to 'Destroy', [product.category, product], method: :delete, data: { confirm: 'Are you sure?' } %>
-</p>
+    <p>
+      <strong>Developed by:</strong>
+      <%= product.developer %>
+    </p>
+    <p>
+      <strong>Software:</strong>
+      <%= product.body %>
+    </p>
+
+    <p>
+      <%= link_to 'Back', categories_path %> | 
+      <%= link_to 'Destroy', [product.category, product], method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+  </div>
+</body>
