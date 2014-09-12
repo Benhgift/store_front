@@ -1,20 +1,26 @@
-<h1 class="padder" id="header">Listing Categories</h1>
+<body role="document">
+  <div class="container padder" role="main">
+    <div class="page-header">
+      <h1>Listing Categories</h1>
+    </div>
 
-<%= link_to 'New category', new_category_path %>
-<table class="border">
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
+    <%= link_to 'New category', new_category_path %>
+    <table class="border">
+        <th>Title</th>
+        <th>Text</th>
+      </tr>
 
-  <% @categories.each do |category| %>
-    <tr>
-      <td><%= category.title %></td>
-      <td><%= category.text %></td>
-      <td><%= link_to 'Show', category_path(category) %></td>
-      <td><%= link_to 'Edit', edit_category_path(category) %></td>
-      <td><%= link_to 'Destroy', category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.title %></td>
+          <td><%= category.text %></td>
+          <td><%= link_to 'Show', category_path(category) %></td>
+          <td><%= link_to 'Edit', edit_category_path(category) %></td>
+          <td><%= link_to 'Destroy', category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+    </table>
 
-<%= link_to 'Back', controller: 'welcome' %>
+    <%= link_to 'Back', controller: 'welcome' %>
+  </div>
+</body>
